@@ -1,0 +1,156 @@
+Parametro;Expresion;Valor_mm;Comentario
+PHONE_X;70.60 mm;70.6000;CONFIRMADO Apple: ancho iPhone 15 Pro
+PHONE_Y;146.60 mm;146.6000;CONFIRMADO Apple: alto iPhone 15 Pro
+PHONE_Z_BODY;8.25 mm;8.2500;CONFIRMADO Apple: grosor del cuerpo sin bump
+CAM_BUMP_H;3.59 mm;3.5900;HIPOTESIS: altura de la isla de camaras
+PHONE_Z;PHONE_Z_BODY + CAM_BUMP_H;11.8400;DERIVADO
+PHONE_CORNER_R;11.50 mm;11.5000;HIPOTESIS
+PHONE_CLEARANCE;0.3 mm;0.3000;Holgura funcional alrededor del telefono
+CAM_ISLAND_W;35.90 mm;35.9000;HIPOTESIS
+CAM_ISLAND_H;35.90 mm;35.9000;HIPOTESIS
+CAM_ISLAND_R;9.00 mm;9.0000;HIPOTESIS
+CAM_ISLAND_OFF_X;7.40 mm;7.4000;HIPOTESIS
+CAM_ISLAND_OFF_Y;7.40 mm;7.4000;HIPOTESIS
+DISPLAY_X;64.50 mm;64.5000;HIPOTESIS
+DISPLAY_Y;139.80 mm;139.8000;HIPOTESIS
+DI_W;26.00 mm;26.0000;HIPOTESIS Dynamic Island
+DI_H;8.00 mm;8.0000;HIPOTESIS Dynamic Island
+DI_CY;61.90 mm;61.9000;HIPOTESIS Dynamic Island
+FRONT_CAM_CX;5.50 mm;5.5000;HIPOTESIS camara frontal X
+FRONT_CAM_CY;60.30 mm;60.3000;HIPOTESIS camara frontal Y
+FRONT_CAM_D;3.00 mm;3.0000;HIPOTESIS camara frontal diametro
+BTN_ZONE_Y0;-8.70 mm;-8.7000;KEEP-OUT botones lado +X
+BTN_ZONE_Y1;40.30 mm;40.3000;KEEP-OUT botones lado +X
+PWR_ZONE_Y0;-11.70 mm;-11.7000;HIPOTESIS boton lateral -X
+PWR_ZONE_Y1;13.30 mm;13.3000;HIPOTESIS boton lateral -X
+USB_W;11.00 mm;11.0000;HIPOTESIS boca USB-C
+USB_H;4.20 mm;4.2000;HIPOTESIS boca USB-C
+FDM_NOZZLE;0.4 mm;0.4000;Boquilla de referencia
+FDM_LAYER;0.15 mm;0.1500;Altura de capa
+FDM_WALL_STRUCT;1.2 mm;1.2000;Pared estructural minima
+FDM_WALL_MECH;0.8 mm;0.8000;Pared mecanica
+FDM_CLEARANCE_SLIDE;0.25 mm;0.2500;Holgura deslizante
+FDM_CLEARANCE_CAPTIVE;0.35 mm;0.3500;Holgura captiva
+FDM_FILLET_MIN;0.4 mm;0.4000;Radio minimo
+CASE_WALL_SIDE;3.4 mm;3.4000;Pared lateral
+CASE_WALL_TOP;8.5 mm;8.5000;Pared superior (aloja lamina frontal replegada)
+CASE_WALL_BOT;7.5 mm;7.5000;Pared inferior (camaras acusticas)
+CASE_WALL_REAR;FDM_WALL_STRUCT;1.2000;Pared trasera
+CASE_LIP_H;3.6 mm;3.6000;Altura del labio frontal
+CASE_LIP_W;3.2 mm;3.2000;Anchura del labio frontal
+CASE_OUT_HX;PHONE_X/2+PHONE_CLEARANCE+CASE_WALL_SIDE;39.0000;DERIVADO semiancho exterior
+CASE_OUT_YMAX;PHONE_Y/2+PHONE_CLEARANCE+CASE_WALL_TOP;82.1000;DERIVADO
+CASE_OUT_YMIN;-(PHONE_Y/2+PHONE_CLEARANCE+CASE_WALL_BOT);-81.1000;DERIVADO
+CASE_OUT_R;PHONE_CORNER_R+PHONE_CLEARANCE+CASE_WALL_SIDE;15.2000;DERIVADO
+LINER_T;FDM_WALL_MECH;0.8000;Espesor del forro interior
+MECH_GAP;4.3 mm;4.3000;Altura de la cavidad de mecanismo
+Z_LINER_0;PHONE_Z_BODY+PHONE_CLEARANCE;8.5500;Cara interior del forro
+Z_LINER_1;Z_LINER_0+LINER_T;9.3500;Cara exterior del forro
+Z_FOLA_0;Z_LINER_1+0.1 mm;9.4500;Capa de seguidores A base
+Z_FOLA_1;Z_FOLA_0+0.7 mm;10.1500;Capa A techo
+Z_FOLB_0;Z_FOLA_1+0.3 mm;10.4500;Capa de seguidores B base
+Z_FOLB_1;Z_FOLB_0+0.7 mm;11.1500;Capa B techo
+CARRIAGE_T;FDM_WALL_STRUCT;1.2000;Espesor del carro maestro
+Z_CAR_0;12.25 mm;12.2500;Base del carro (libra la isla = 12.14)
+Z_CAR_1;Z_CAR_0+CARRIAGE_T;13.4500;DERIVADO
+Z_SPLIT;Z_LINER_1+MECH_GAP;13.6500;PLANO DE PARTICION carcasa delantera/trasera
+COVER_T;1.2 mm;1.2000;Espesor del cubrecamaras
+Z_COV_0;Z_SPLIT+0.1 mm;13.7500;Base del cubrecamaras
+Z_COV_1;Z_COV_0+COVER_T;14.9500;DERIVADO
+Z_BACK;16.25 mm;16.2500;SUPERFICIE EXTERIOR TRASERA (uniforme)
+REAR_PANEL_T;Z_BACK-(Z_COV_1+0.1 mm);1.2000;DERIVADO espesor del panel trasero
+COVER_INSET;Z_BACK-Z_COV_1;1.3000;DERIVADO rebaje del cubrecamaras
+COVER_TRAVEL;2*S1_TRAVEL;38.0000;DERIVADO recorrido en Y del cubrecamaras
+COVER_X0;-29.0 mm;-29.0000;Cubrecamaras X min
+COVER_X1;13.0 mm;13.0000;Cubrecamaras X max
+COVER_Y0;-9.0 mm;-9.0000;Cubrecamaras Y min en ONLINE
+COVER_LY;38.0 mm;38.0000;Longitud en Y del panel
+COVER_RACK_X;2.2 mm;2.2000;Linea primitiva de la cremallera del cubrecamaras
+WIN_X0;-27.0 mm;-27.0000;Ventana de camara X min (cara interior)
+WIN_X1;7.0 mm;7.0000;Ventana de camara X max
+WIN_Y0;31.0 mm;31.0000;Ventana de camara Y min
+WIN_Y1;65.0 mm;65.0000;Ventana de camara Y max
+WIN_R;8.0 mm;8.0000;Radio de esquina de la ventana
+WIN_CHAMFER;1.2 mm;1.2000;Bisel a 45 grados del borde exterior
+GEAR_M;0.8 mm;0.8000;Modulo del tren de engranajes
+GEAR_Z1;12 mm;12.0000;Dientes del pinon de entrada
+GEAR_Z2;24 mm;24.0000;Dientes de la rueda de salida
+GEAR_R1;4.8 mm;4.8000;Radio primitivo del pinon
+GEAR_R2;9.6 mm;9.6000;Radio primitivo de la rueda
+GEAR_CX;-7.4 mm;-7.4000;Eje del engranaje compuesto X
+GEAR_CY;16.0 mm;16.0000;Eje del engranaje compuesto Y
+F1_RACK_Y;20.8 mm;20.8000;Linea primitiva de la cremallera del seguidor CAM-01
+SLIDER_TRAVEL;30 mm;30.0000;FROZEN recorrido del slider
+OPTICAL_WINDOW;12 mm;12.0000;FROZEN ventana optica x=0..12
+ACOUSTIC_WINDOW;8 mm;8.0000;FROZEN ventana acustica x=12..20
+RF_POSITION_WINDOW;4 mm;4.0000;FROZEN x=20..24
+RF_COMPRESSION_WINDOW;6 mm;6.0000;FROZEN x=24..30
+KD_C1_S0;0.5 mm;0.5000;Inicio CAM-01
+KD_C1_S1;11.5 mm;11.5000;Fin CAM-01
+KD_C2_S0;4.0 mm;4.0000;Inicio CAM-02
+KD_C2_S1;12.0 mm;12.0000;Fin CAM-02
+KD_C3_S0;12.2 mm;12.2000;Inicio CAM-03
+KD_C3_S1;19.8 mm;19.8000;Fin CAM-03
+KD_C4_S0;20.0 mm;20.0000;Inicio CAM-45 fase posicion
+KD_C4_S1;24.0 mm;24.0000;Fin fase posicion
+KD_C5_S0;24.0 mm;24.0000;Inicio fase compresion
+KD_C5_S1;30.0 mm;30.0000;Fin fase compresion
+CARRIAGE_X0;6.0 mm;6.0000;Carro borde interior
+CARRIAGE_X1;31.5 mm;31.5000;Carro borde exterior
+CARRIAGE_LEN;100 mm;100.0000;Longitud del carro
+CARRIAGE_Y0;-60 mm;-60.0000;Y inferior del carro en ONLINE
+CARRIAGE_GUIDE_CL;0.35 mm;0.3500;Holgura de guia del carro
+PIN_D;2.0 mm;2.0000;Diametro del perno seguidor
+SLOT_W;PIN_D+0.2 mm;2.2000;Anchura de ranura de leva
+CAM1_PIN_Y;36 mm;36.0000;Y del perno CAM-01
+CAM2_PIN_Y;24 mm;24.0000;Y del perno CAM-02
+CAM3_PIN_Y;-24 mm;-24.0000;Y del perno CAM-03
+CAM45_PIN_Y;-10.0 mm;-10.0000;Y del perno CAM-45
+S1_TRAVEL;19.0 mm;19.0000;FROZEN recorrido del seguidor CAM-01
+CAM1_X0;29.5 mm;29.5000;X perno CAM-01 ONLINE
+CAM1_X1;CAM1_X0-S1_TRAVEL;10.5000;DERIVADO
+CAM2_X0;29.0 mm;29.0000;X perno CAM-02 ONLINE
+CAM2_X1;CAM2_X0-FRONT_BAR_TRAVEL;26.0000;DERIVADO
+CAM3_X0;29.0 mm;29.0000;X perno CAM-03 ONLINE
+CAM3_X1;CAM3_X0-ACOUSTIC_TRAVEL;17.0000;DERIVADO
+CAM45_X0;24.5 mm;24.5000;X perno CAM-45 ONLINE
+CAM45_X1;CAM45_X0-RF_PUSH_TRAVEL;20.5000;Fin fase posicion
+CAM45_X2;CAM45_X1-RF_PUSH_TRAVEL;16.5000;Fin fase compresion
+FRONT_FLAP_L;19.0 mm;19.0000;Longitud de la lamina frontal
+FRONT_FLAP_W;9.0 mm;9.0000;Anchura de la lamina frontal
+FRONT_FLAP_T;1.1 mm;1.1000;Espesor de la lamina frontal
+FRONT_FLAP_PX;FRONT_CAM_CX;5.5000;Pivote X
+FRONT_FLAP_PY;77.0 mm;77.0000;Pivote Y
+FRONT_CRANK_R;3.0 mm;3.0000;Radio del yugo escoces
+FRONT_BAR_TRAVEL;FRONT_CRANK_R;3.0000;DERIVADO recorrido de la barra frontal
+Z_FLAP_0;-3.0 mm;-3.0000;Z inferior de la lamina frontal
+Z_FLAP_1;Z_FLAP_0+FRONT_FLAP_T;-1.9000;DERIVADO
+Z_BARP_0;-1.75 mm;-1.7500;Z placa frontal de la barra
+Z_BARP_1;Z_BARP_0+1.0 mm;-0.7500;DERIVADO
+ACOUSTIC_TRAVEL;12 mm;12.0000;FROZEN recorrido de la compuerta acustica
+AC_PORT_R_X0;11.0 mm;11.0000;Grupo acustico derecho
+AC_PORT_R_X1;17.0 mm;17.0000;Grupo acustico derecho (REV A: reducido para librar la esquina)
+AC_PORT_L_X0;-21.0 mm;-21.0000;Grupo acustico izquierdo
+AC_PORT_L_X1;-11.0 mm;-11.0000;Grupo acustico izquierdo
+AC_GATE_Z0;5.7 mm;5.7000;Z inferior de la compuerta
+AC_GATE_Z1;8.5 mm;8.5000;Z superior de la compuerta
+AC_GATE_WIN_X0;10.5 mm;10.5000;Ventana de la compuerta X min
+AC_GATE_WIN_X1;21.5 mm;21.5000;Ventana de la compuerta X max
+RF_PUSH_TRAVEL;4.0 mm;4.0000;Recorrido X del seguidor RF por fase
+RF_POSITION_TRAVEL;1.5 mm;1.5000;REVISADO V3 aproximacion del contacto RF
+RF_COMPRESSION_TRAVEL;0.5 mm;0.5000;REVISADO V3 deflexion del fingerstock
+RF_LIFT_TOTAL;RF_POSITION_TRAVEL+RF_COMPRESSION_TRAVEL;2.0000;DERIVADO
+RF_GASKET_T;1.2 mm;1.2000;Altura libre del fingerstock BeCu
+RF_CONTACT_TARGET_Z;Z_SPLIT;13.6500;Cara conductora del panel trasero
+SLIDER_TAB_LY;14.0 mm;14.0000;Longitud de la pestana exterior
+SLIDER_TAB_LZ;4.4 mm;4.4000;Altura de la pestana
+SLIDER_TAB_PROUD;1.0 mm;1.0000;Saliente sobre la superficie
+SLIDER_TAB_Y0;-62.0 mm;-62.0000;Y de la pestana en ONLINE
+SLIDER_POCKET_DEPTH;1.2 mm;1.2000;Profundidad del rebaje
+SLIDER_STEM_LY;6.0 mm;6.0000;Anchura del vastago
+SLIDER_SLOT_Z0;Z_CAR_0-0.1 mm;12.1500;DERIVADO
+SLIDER_SLOT_Z1;Z_CAR_1+0.1 mm;13.5500;DERIVADO
+LEDGE_X_OUT;30.5 mm;30.5000;Repisa exterior del carro
+LEDGE_X_IN;4.7 mm;4.7000;Repisa interior del carro
+GUIDE_X_OUT;31.85 mm;31.8500;Guia lateral exterior
+GUIDE_X_IN;5.65 mm;5.6500;Guia lateral interior
