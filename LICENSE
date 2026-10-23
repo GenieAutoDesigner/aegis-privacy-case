@@ -1,0 +1,21 @@
+AEGIS — licencias / licenses
+Copyright (c) 2026 Autor del proyecto AEGIS (AEGIS project author)
+
+1. Hardware (diseño, CAD, planos, parámetros, scripts de generación de geometría y documentación técnica:
+   cad/, planos/, documentacion-tecnica/, media/blender/)
+   → CERN Open Hardware Licence Version 2 – Strongly Reciprocal (CERN-OHL-S-2.0)
+     Texto completo: LICENSES/CERN-OHL-S-2.0.txt
+     Source location: https://github.com/GenieAutoDesigner/aegis-privacy-case
+
+2. Documentación, textos, imágenes, vídeos y presentación
+   (README.md, DONAR.md, docs/, presentacion/, assets/, media/videos/)
+   → Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)
+     Texto completo: LICENSES/CC-BY-SA-4.0.txt
+
+Puedes estudiar, modificar, fabricar y distribuir el diseño, también comercialmente, siempre que
+mantengas el aviso de autoría y publiques tus modificaciones con la misma licencia.
+
+Sin garantía: el diseño es un concepto en desarrollo y no está validado (ver docs/estado-del-proyecto.md).
+
+"AEGIS" se usa como nombre del proyecto; la licencia no concede derechos sobre el nombre.
+Las marcas de terceros (iPhone, Apple) pertenecen a sus titulares y se citan solo para indicar compatibilidad.

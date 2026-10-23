@@ -1,0 +1,11 @@
+# Documentos de terceros y datos personales: nunca subir
+privado/
+NDA*
+*presupuesto*.pdf
+*Propuesta*.pdf
+*Acuerdo*
+# Material con derechos de terceros
+*Accessory-Design-Guidelines*
+iphone-15-pro.pdf
+Libros/
+__pycache__/
