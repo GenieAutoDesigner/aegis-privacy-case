@@ -1,0 +1,44 @@
+RESUMEN TECNICO - Mecanismo Modo Aislamiento (persiana frontal + tren de amplificacion)
+Fecha: sesion Fusion 360 + Blender
+
+=== ARCHIVO BASE ===
+Documento Fusion activo: Privacy_Case_v1_OFFLINE
+Componentes principales: 02_Frame (Back_Housing_and_Side_Walls), 03_Main_Carriage (interruptor+RF), 04_Camera_Module, 05_Microphone_Module, 07_Screen_Shutter_Module (NUEVO, creado esta sesion)
+
+=== RECORRIDOS REALES (para animar) ===
+Interruptor (03_Main_Carriage): traslacion Y, 0 a -0.46cm
+Camara (04_Camera_Module): traslacion Y, 0 a -3.59cm
+Microfono (05_Microphone_Module): rotacion eje X, pivote (Y=-8.85, Z=0.56), 0 a 35 grados
+Persiana pantalla (material en 07_Screen_Shutter_Module): reconstruccion por estado, Y_TOP=7.58 fijo, Y_BOTTOM va de 7.58 (0%% cubierto) a -7.82 (100%% cubierto)
+
+=== MECANISMO NUEVO: PERSIANA FRONTAL (07_Screen_Shutter_Module) ===
+Hueco de pantalla real cortado en el marco: rectangulo redondeado, X=+-3.685, Y=-7.845 a 7.6, fillet 0.35, profundidad Z=-0.40 a 0.20 (NO todo el grosor de la funda)
+Carrete: radio 0.06cm, en Y=8.3, Z=-0.15 (eje de rotacion en X), ancho X=+-3.85
+Material de cobertura: lamina fina 0.02cm grosor, Z=-0.22
+
+TREN DE AMPLIFICACION (del eje principal compartido al carrete), ratio TOTAL = 83.33:1:
+- Eje principal compartido (Carriage_Axle, Y=-8.76,Z=0.775) -- MISMO eje que ya mueve RF_Fabric_Drive, NO modificado
+- Etapa 1: Amp_Gear1A_grande (r=0.5) engrana Amp_Gear1B_pequeno (r=0.12) en X=-2.0 -> ratio 4.17:1
+- Eje transmision 1: Y=-8.46 a 0.0, Z=1.3176 (constante), X=-1.5
+- Etapa 2: Amp_Gear2A_grande (r=0.18) engrana Amp_Gear2B_pequeno (r=0.045) en X=-1.0 -> ratio 4:1 (ratio acumulado 16.67:1)
+- Eje transmision 2: Y=0.225 a 7.85, Z=1.3176 constante, X=-1.0
+- Eje de cruce de profundidad: Amp_Shaft3a (Y=7.85-8.15,Z=1.3176) + Amp_Shaft3b (Z=1.3176 a -0.1, Y=8.1) -- lleva el giro de la zona trasera a la frontal
+- Etapa 3: Amp_Gear3A_grande (r=0.3, Y=7.94,Z=-0.15) engrana Amp_Gear3B_pequeno (r=0.06, Y=8.3,Z=-0.15 -- EXACTO eje del carrete) -> ratio 5:1 (ratio acumulado FINAL 83.33:1)
+- Amp_Shaft_Final_al_carrete: X=-3.7 a -1.0, en el eje exacto del carrete, conecta fisicamente
+
+CONVENCION DE EJES DE BOCETO EN FUSION (para no repetir errores esta sesion):
+Plano YZ (normal=X): sketch_X = -GlobalZ, sketch_Y = GlobalY
+Plano XZ (normal=Y): sketch_X = GlobalX, sketch_Y = -GlobalZ
+Plano XY (normal=Z): sketch_X = GlobalX, sketch_Y = GlobalY (estandar)
+
+=== COLISIONES MENORES ACEPTADAS (residuales, no criticas) ===
+Varias del orden de 0.0005 a 0.03 cm3 en distintos puntos de contacto de engranajes/eje -- aceptadas, mismo orden que el resto de restos de malla de dientes ya aceptados en el diseno original
+
+=== ESTADOS EXPORTADOS ===
+6 estados (00_ONLINE, 01-04_Movimiento20-80, 05_OFFLINE) en STEP y OBJ, en Estados_STEP_OBJ/
+Blend de Blender con los 6 importados y animacion de visibilidad (120 frames, 20 por estado): ModoAislamiento_Secuencia.blend
+
+=== PENDIENTE ===
+- Limpiar residuos de colision menores si se quiere maxima precision
+- Revisar visualmente en Blender (camara/iluminacion) y generar video final
+- Punto raro aislado en la camara (~53mm3, muy alejado en Y) sin investigar a fondo
